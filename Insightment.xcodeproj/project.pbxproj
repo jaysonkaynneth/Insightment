@@ -11,6 +11,10 @@
 		96BA5268288A9BE400610A70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5267288A9BE400610A70 /* ContentView.swift */; };
 		96BA526A288A9BE500610A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5269288A9BE500610A70 /* Assets.xcassets */; };
 		96BA526D288A9BE500610A70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BA526C288A9BE500610A70 /* Preview Assets.xcassets */; };
+		96CC1EBC288E83DD0038AC66 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1EBB288E83DD0038AC66 /* MainView.swift */; };
+		96CC1EBE288E88B30038AC66 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1EBD288E88B30038AC66 /* FeedbackView.swift */; };
+		96CC1EC1288E8BEF0038AC66 /* NextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1EC0288E8BEF0038AC66 /* NextView.swift */; };
+		96F2C89428912FB1000F9F20 /* FeedbackModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2C89328912FB1000F9F20 /* FeedbackModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		96BA5267288A9BE400610A70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96BA5269288A9BE500610A70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96BA526C288A9BE500610A70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96CC1EBB288E83DD0038AC66 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		96CC1EBD288E88B30038AC66 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		96CC1EC0288E8BEF0038AC66 /* NextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextView.swift; sourceTree = "<group>"; };
+		96F2C89328912FB1000F9F20 /* FeedbackModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,10 @@
 		96BA5264288A9BE400610A70 /* Insightment */ = {
 			isa = PBXGroup;
 			children = (
+				96CC1EBA288E7B2F0038AC66 /* ViewModel */,
+				96CC1EB9288E7B250038AC66 /* View */,
+				96CC1EB8288E7B1A0038AC66 /* Model */,
 				96BA5265288A9BE400610A70 /* InsightmentApp.swift */,
-				96BA5267288A9BE400610A70 /* ContentView.swift */,
 				96BA5269288A9BE500610A70 /* Assets.xcassets */,
 				96BA526B288A9BE500610A70 /* Preview Content */,
 			);
@@ -65,6 +75,32 @@
 				96BA526C288A9BE500610A70 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96CC1EB8288E7B1A0038AC66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CC1EB9288E7B250038AC66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96BA5267288A9BE400610A70 /* ContentView.swift */,
+				96CC1EBB288E83DD0038AC66 /* MainView.swift */,
+				96CC1EBD288E88B30038AC66 /* FeedbackView.swift */,
+				96F2C89328912FB1000F9F20 /* FeedbackModalView.swift */,
+				96CC1EC0288E8BEF0038AC66 /* NextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96CC1EBA288E7B2F0038AC66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				96BA5268288A9BE400610A70 /* ContentView.swift in Sources */,
+				96CC1EC1288E8BEF0038AC66 /* NextView.swift in Sources */,
+				96CC1EBE288E88B30038AC66 /* FeedbackView.swift in Sources */,
+				96F2C89428912FB1000F9F20 /* FeedbackModalView.swift in Sources */,
+				96CC1EBC288E83DD0038AC66 /* MainView.swift in Sources */,
 				96BA5266288A9BE400610A70 /* InsightmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
