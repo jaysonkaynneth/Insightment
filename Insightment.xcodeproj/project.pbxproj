@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96231685289198E800C731BA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96231684289198E800C731BA /* DataController.swift */; };
+		9623168828919A8B00C731BA /* Insightment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9623168628919A8B00C731BA /* Insightment.xcdatamodeld */; };
 		96BA5266288A9BE400610A70 /* InsightmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5265288A9BE400610A70 /* InsightmentApp.swift */; };
 		96BA526A288A9BE500610A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5269288A9BE500610A70 /* Assets.xcassets */; };
 		96BA526D288A9BE500610A70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BA526C288A9BE500610A70 /* Preview Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96231684289198E800C731BA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		9623168728919A8B00C731BA /* Insightment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Insightment.xcdatamodel; sourceTree = "<group>"; };
 		96BA5262288A9BE400610A70 /* Insightment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insightment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BA5265288A9BE400610A70 /* InsightmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightmentApp.swift; sourceTree = "<group>"; };
 		96BA5269288A9BE500610A70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 				96CC1EB9288E7B250038AC66 /* View */,
 				96CC1EB8288E7B1A0038AC66 /* Model */,
 				96BA5265288A9BE400610A70 /* InsightmentApp.swift */,
+				96231684289198E800C731BA /* DataController.swift */,
 				96BA5269288A9BE500610A70 /* Assets.xcassets */,
 				96BA526B288A9BE500610A70 /* Preview Content */,
 			);
@@ -80,6 +85,7 @@
 		96CC1EB8288E7B1A0038AC66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9623168628919A8B00C731BA /* Insightment.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96231685289198E800C731BA /* DataController.swift in Sources */,
 				96F2C896289138B5000F9F20 /* NextModalView.swift in Sources */,
+				9623168828919A8B00C731BA /* Insightment.xcdatamodeld in Sources */,
 				96CC1EC1288E8BEF0038AC66 /* NextView.swift in Sources */,
 				96CC1EBE288E88B30038AC66 /* FeedbackView.swift in Sources */,
 				96F2C89428912FB1000F9F20 /* FeedbackModalView.swift in Sources */,
@@ -379,6 +387,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9623168628919A8B00C731BA /* Insightment.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9623168728919A8B00C731BA /* Insightment.xcdatamodel */,
+			);
+			currentVersion = 9623168728919A8B00C731BA /* Insightment.xcdatamodel */;
+			path = Insightment.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 96BA525A288A9BE400610A70 /* Project object */;
 }

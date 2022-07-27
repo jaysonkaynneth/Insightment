@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FeedbackModalView: View {
+    @Environment(\.managedObjectContext) var moc
+    
     var location = ["Start", "Stop", "Continue"]
     
     @Binding var showModal: Bool
-    @State private var feedback: String = ""
+    @State private var feedbacktext: String = ""
     @State private var locations = "Start"
     
     var body: some View {
@@ -21,12 +23,12 @@ struct FeedbackModalView: View {
                     Text("Feedback")
                 
                     ZStack{
-                        TextEditor(text: $feedback).frame(minHeight: 150, maxHeight: 150)
+                        TextEditor(text: $feedbacktext).frame(minHeight: 150, maxHeight: 150)
                     }.shadow(radius: 1)
                     
                     HStack{
                     Text("Location")
-                    Picker("Please choose a location", selection: $locations) {
+                    Picker("", selection: $locations) {
                                     ForEach(location, id: \.self) {
                                         Text($0)
                                     }
@@ -53,7 +55,12 @@ struct FeedbackModalView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             print("Add tapped!")
+                            let feedback = Feedback(context: moc)
+                            
+                            feedback.feedback = (feedbacktext)
+                            feedback.location = (locations)
                             self.showModal.toggle()
+                            try? moc.save()
                         } label: {
                             Text("Add")
                                 .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
@@ -63,6 +70,7 @@ struct FeedbackModalView: View {
             }
         }
     }
+
 }
 
 struct FeedbackModalView_Previews: PreviewProvider {

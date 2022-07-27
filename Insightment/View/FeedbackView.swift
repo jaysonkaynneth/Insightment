@@ -7,47 +7,63 @@
 
 import SwiftUI
 
-struct Feedback: Identifiable {
-    let id: UUID = UUID()
-    let feedback: String
-}
 
 struct FeedbackView: View {
-    @State private var selectedIndex = 0
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var feedbacks: FetchedResults<Feedback>
+    @State private var selectedIndex = "Start"
     @State private var showModal = false
     
-    let feedbacks = [
-        Feedback(feedback: "You are cool"),
-        Feedback(feedback: "You are not cool"),
-        Feedback(feedback: "You are hot")
-    ]
     
     var body: some View {
         NavigationView{
             VStack{
                 Picker("Favorite Color", selection: $selectedIndex, content: {
-                    Text("Start").tag(0)
-                    Text("Stop").tag(1)
-                    Text("Continue").tag(2)
+                    Text("Start").tag("Start")
+                    Text("Stop").tag("Stop")
+                    Text("Continue").tag("Continue")
                 })
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.top, 25)
                 
-                if selectedIndex == 0 {
-                    List {
-                        Text("Hi")
+                if selectedIndex == "Start" {
+                    List{
+                        ForEach(feedbacks) { feedback in
+                            NavigationLink{
+                                Text(feedback.feedback ?? "no feedback")
+                            } label: {
+                                Text(feedback.feedback ?? "no feedback")
+                                }
+                        }.onDelete(perform: deleteItems)
+
                     }.listStyle(.inset)
                         .padding(.top, 25)
                     
-                } else if selectedIndex == 1 {
-                    List {
-                        Text("Beep")
+         
+                    
+                } else if selectedIndex == "Stop" {
+                    List{
+                        ForEach(feedbacks) { feedback in
+                            NavigationLink{
+                                Text(feedback.feedback ?? "no feedback")
+                            } label: {
+                                Text(feedback.feedback ?? "no feedback")
+                                }
+                        }.onDelete(perform: deleteItems)
+
                     }.listStyle(.inset)
                         .padding(.top, 25)
                     
                 } else {
-                    List {
-                        Text("Boop")
+                    List{
+                        ForEach(feedbacks) { feedback in
+                            NavigationLink{
+                                Text(feedback.feedback ?? "no feedback")
+                            } label: {
+                                Text(feedback.feedback ?? "no feedback")
+                                }
+                        }.onDelete(perform: deleteItems)
+
                     }.listStyle(.inset)
                         .padding(.top, 25)
                 }
@@ -65,6 +81,19 @@ struct FeedbackView: View {
                 .sheet(isPresented: $showModal) {
                     FeedbackModalView(showModal: self.$showModal)
                 }
+            }
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { feedbacks[$0] }.forEach(moc.delete)
+
+            do {
+                try moc.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

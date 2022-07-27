@@ -11,7 +11,7 @@ struct NextModalView: View {
     var location = ["Start", "Stop", "Continue"]
     
     @Binding var showModal: Bool
-    @State private var feedback: String = ""
+    @State private var nextStep: String = ""
     @State private var locations = "Start"
     
     var body: some View {
@@ -20,7 +20,7 @@ struct NextModalView: View {
                     List{
                         HStack {
                         Text("Next Step")
-                            TextField("", text: $feedback).textFieldStyle(.roundedBorder)
+                            TextField("", text: $nextStep).textFieldStyle(.roundedBorder)
                         }
                     }.listStyle(.inset)
                     .padding(.top, 44)
