@@ -32,23 +32,12 @@ struct NextModalView: View {
                     }.foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
             }.padding()
             List{
-                Text("Feedback")
-            
+                Text("Next Step")
                 ZStack{
                     TextEditor(text: $feedback).frame(minHeight: 150, maxHeight: 150)
                 }.shadow(radius: 1)
                 
-                HStack{
-                Text("Location")
-                Picker("Please choose a location", selection: $locations) {
-                                ForEach(location, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                }
-                
             }.listStyle(.inset)
-            Text("You selected: \(locations)")
         }
     }
 }
