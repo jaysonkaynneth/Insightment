@@ -15,40 +15,52 @@ struct FeedbackModalView: View {
     @State private var locations = "Start"
     
     var body: some View {
-        VStack {
-            HStack(alignment: .top){
+        NavigationView {
+            VStack {
+                List{
+                    Text("Feedback")
                 
-                Button {
-                    print("Add tapped!")
-                    self.showModal.toggle()
-                } label: {
-                    Image(systemName: "chevron.left")      .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
-                    Text("Cancel")
-                        .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
-                }
-                Spacer()
-                    Button("Add") {
-                        self.showModal.toggle()
-                    }.foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
-            }.padding()
-            List{
-                Text("Feedback")
-            
-                ZStack{
-                    TextEditor(text: $feedback).frame(minHeight: 150, maxHeight: 150)
-                }.shadow(radius: 1)
-                
-                HStack{
-                Text("Location")
-                Picker("Please choose a location", selection: $locations) {
-                                ForEach(location, id: \.self) {
-                                    Text($0)
+                    ZStack{
+                        TextEditor(text: $feedback).frame(minHeight: 150, maxHeight: 150)
+                    }.shadow(radius: 1)
+                    
+                    HStack{
+                    Text("Location")
+                    Picker("Please choose a location", selection: $locations) {
+                                    ForEach(location, id: \.self) {
+                                        Text($0)
+                                    }
                                 }
-                            }
-                }
-                
-            }.listStyle(.inset)
-            Text("You selected: \(locations)")
+                    }
+                    
+                }.listStyle(.inset)
+                Text("You selected: \(locations)")
+            }.navigationTitle(Text("Add Feedback"))
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Add tapped!")
+                        self.showModal.toggle()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                        Text("Cancel")
+                            .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            print("Add tapped!")
+                            self.showModal.toggle()
+                        } label: {
+                            Text("Add")
+                                .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                        }
+                    }
+
+            }
         }
     }
 }
@@ -58,3 +70,5 @@ struct FeedbackModalView_Previews: PreviewProvider {
         FeedbackModalView(showModal: .constant(true))
     }
 }
+
+

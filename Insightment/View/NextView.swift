@@ -18,7 +18,7 @@ struct NextView: View {
                     }.listStyle(.inset)
                         .padding(.top, 25)
             }
-            .navigationTitle(Text("Feedbacks"))
+            .navigationTitle(Text("Next Steps"))
             .toolbar {
                 Button {
                     print("Add tapped!")

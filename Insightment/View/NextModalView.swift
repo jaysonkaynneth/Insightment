@@ -2,7 +2,7 @@
 //  NextModalView.swift
 //  Insightment
 //
-//  Created by Jason Kenneth on 27/07/22.
+//  Created by Jason Kenneth on 26/07/22.
 //
 
 import SwiftUI
@@ -15,29 +15,45 @@ struct NextModalView: View {
     @State private var locations = "Start"
     
     var body: some View {
-        VStack {
-            HStack(alignment: .top){
+        NavigationView {
+            VStack {
+                    List{
+                        HStack {
+                        Text("Next Step")
+                            TextField("", text: $feedback).textFieldStyle(.roundedBorder)
+                        }
+                    }.listStyle(.inset)
+                    .padding(.top, 44)
                 
-                Button {
-                    print("Add tapped!")
-                    self.showModal.toggle()
-                } label: {
-                    Image(systemName: "chevron.left")      .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
-                    Text("Cancel")
-                        .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
-                }
+                
                 Spacer()
-                    Button("Add") {
-                        self.showModal.toggle()
-                    }.foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
-            }.padding()
-            List{
-                Text("Next Step")
-                ZStack{
-                    TextEditor(text: $feedback).frame(minHeight: 150, maxHeight: 150)
-                }.shadow(radius: 1)
                 
-            }.listStyle(.inset)
+            }.navigationTitle(Text("Add Next Step"))
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Add tapped!")
+                        self.showModal.toggle()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                        Text("Cancel")
+                            .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            print("Add tapped!")
+                            self.showModal.toggle()
+                        } label: {
+                            Text("Add")
+                                .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                        }
+                    }
+
+            }
         }
     }
 }
@@ -47,3 +63,5 @@ struct NextModalView_Previews: PreviewProvider {
         NextModalView(showModal: .constant(true))
     }
 }
+
+
