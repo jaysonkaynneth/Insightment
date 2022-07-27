@@ -15,6 +15,7 @@
 		96CC1EBE288E88B30038AC66 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1EBD288E88B30038AC66 /* FeedbackView.swift */; };
 		96CC1EC1288E8BEF0038AC66 /* NextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1EC0288E8BEF0038AC66 /* NextView.swift */; };
 		96F2C89428912FB1000F9F20 /* FeedbackModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2C89328912FB1000F9F20 /* FeedbackModalView.swift */; };
+		96F2C896289138B5000F9F20 /* NextModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2C895289138B5000F9F20 /* NextModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		96CC1EBD288E88B30038AC66 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		96CC1EC0288E8BEF0038AC66 /* NextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextView.swift; sourceTree = "<group>"; };
 		96F2C89328912FB1000F9F20 /* FeedbackModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackModalView.swift; sourceTree = "<group>"; };
+		96F2C895289138B5000F9F20 /* NextModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				96CC1EBD288E88B30038AC66 /* FeedbackView.swift */,
 				96F2C89328912FB1000F9F20 /* FeedbackModalView.swift */,
 				96CC1EC0288E8BEF0038AC66 /* NextView.swift */,
+				96F2C895289138B5000F9F20 /* NextModalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F2C896289138B5000F9F20 /* NextModalView.swift in Sources */,
 				96BA5268288A9BE400610A70 /* ContentView.swift in Sources */,
 				96CC1EC1288E8BEF0038AC66 /* NextView.swift in Sources */,
 				96CC1EBE288E88B30038AC66 /* FeedbackView.swift in Sources */,

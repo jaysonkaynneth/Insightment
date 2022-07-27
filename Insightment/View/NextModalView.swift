@@ -1,13 +1,13 @@
 //
-//  FeedbackModalView.swift
+//  NextModalView.swift
 //  Insightment
 //
-//  Created by Jason Kenneth on 26/07/22.
+//  Created by Jason Kenneth on 27/07/22.
 //
 
 import SwiftUI
 
-struct FeedbackModalView: View {
+struct NextModalView: View {
     var location = ["Start", "Stop", "Continue"]
     
     @Binding var showModal: Bool
@@ -53,8 +53,8 @@ struct FeedbackModalView: View {
     }
 }
 
-struct FeedbackModalView_Previews: PreviewProvider {
+struct NextModalView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedbackModalView(showModal: .constant(true))
+        NextModalView(showModal: .constant(true))
     }
 }
