@@ -46,11 +46,9 @@ struct FeedbackView: View {
                         ForEach(feedbacks.filter{
                             $0.location == "Stop"
                         }) { feedback in
-                            NavigationLink{
+                        
                                 Text(feedback.feedback ?? "no feedback")
-                            } label: {
-                                Text(feedback.feedback ?? "no feedback")
-                                }
+                            
                         }.onDelete(perform: deleteItems)
 
                     }.listStyle(.inset)
@@ -61,11 +59,9 @@ struct FeedbackView: View {
                         ForEach(feedbacks.filter{
                             $0.location == "Continue"
                         }) { feedback in
-                            NavigationLink{
+                           
                                 Text(feedback.feedback ?? "no feedback")
-                            } label: {
-                                Text(feedback.feedback ?? "no feedback")
-                                }
+                            
                         }.onDelete(perform: deleteItems)
 
                     }.listStyle(.inset)

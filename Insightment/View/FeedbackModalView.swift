@@ -41,7 +41,7 @@ struct FeedbackModalView: View {
                         
                             .background(.white)
                             .cornerRadius(6)
-                            .shadow(radius: 3)
+                            .shadow(radius: 1)
                             .padding()
                 }
                     
