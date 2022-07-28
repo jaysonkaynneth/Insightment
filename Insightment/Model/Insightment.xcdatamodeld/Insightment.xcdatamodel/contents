@@ -5,10 +5,11 @@
         <attribute name="location" optional="YES" attributeType="String"/>
     </entity>
     <entity name="NextStep" representedClassName="NextStep" syncable="YES" codeGenerationType="class">
+        <attribute name="done" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="nextstep" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Feedback" positionX="-63" positionY="-18" width="128" height="59"/>
-        <element name="NextStep" positionX="-54" positionY="-9" width="128" height="44"/>
+        <element name="NextStep" positionX="-54" positionY="-9" width="128" height="59"/>
     </elements>
 </model>

@@ -23,6 +23,7 @@ struct NextView: View {
                             Spacer()
                             Button {
                                 tapped.toggle()
+
                             } label: {
                                 Image(systemName: tapped ? "checkmark" : "")
                                     .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
@@ -31,7 +32,7 @@ struct NextView: View {
                         }
                             .onTapGesture {
                                 print("Tapped cell")
-                                tapped.toggle()
+                                
                     }
                             
                             
