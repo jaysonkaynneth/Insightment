@@ -15,6 +15,8 @@ struct FeedbackModalView: View {
     @Binding var showModal: Bool
     @State private var feedbacktext: String = ""
     @State private var locations = "Start"
+    @State private var isShowing = false
+    @State private var amount = 0.0
     
     var body: some View {
         NavigationView {
@@ -28,15 +30,22 @@ struct FeedbackModalView: View {
                     
                     HStack{
                     Text("Location")
+                        Spacer()
                     Picker("", selection: $locations) {
                                     ForEach(locationName, id: \.self) {
                                         Text($0)
                                     }
-                                }
-                    }
+                    }.pickerStyle(.menu)
+                            .frame(width: 100, height: 32)
+                            .foregroundColor(.red)
+                        
+                            .background(.white)
+                            .cornerRadius(6)
+                            .shadow(radius: 3)
+                            .padding()
+                }
                     
                 }.listStyle(.inset)
-                Text("You selected: \(locations)")
             }.navigationTitle(Text("Add Feedback"))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {

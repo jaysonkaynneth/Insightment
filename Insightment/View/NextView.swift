@@ -22,10 +22,10 @@ struct NextView: View {
                             Text(nextstep.nextstep ?? "no feedback")
                             Spacer()
                             Button {
-                                tapped.toggle()
-
+                                nextstep.done.toggle()
+                                try? moc.save()
                             } label: {
-                                Image(systemName: tapped ? "checkmark" : "")
+                                Image(systemName: nextstep.done ? "checkmark" : "")
                                     .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
                             }
 

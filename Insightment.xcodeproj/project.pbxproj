@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		96231685289198E800C731BA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96231684289198E800C731BA /* DataController.swift */; };
 		9623168828919A8B00C731BA /* Insightment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9623168628919A8B00C731BA /* Insightment.xcdatamodeld */; };
+		964E6D492892BCC200C8154B /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = 964E6D482892BCC200C8154B /* HalfASheet */; };
 		96BA5266288A9BE400610A70 /* InsightmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5265288A9BE400610A70 /* InsightmentApp.swift */; };
 		96BA526A288A9BE500610A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5269288A9BE500610A70 /* Assets.xcassets */; };
 		96BA526D288A9BE500610A70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BA526C288A9BE500610A70 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964E6D492892BCC200C8154B /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +127,9 @@
 			dependencies = (
 			);
 			name = Insightment;
+			packageProductDependencies = (
+				964E6D482892BCC200C8154B /* HalfASheet */,
+			);
 			productName = Insightment;
 			productReference = 96BA5262288A9BE400610A70 /* Insightment.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 96BA5259288A9BE400610A70;
+			packageReferences = (
+				964E6D472892BCC200C8154B /* XCRemoteSwiftPackageReference "HalfASheet" */,
+			);
 			productRefGroup = 96BA5263288A9BE400610A70 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -387,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		964E6D472892BCC200C8154B /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/franklynw/HalfASheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		964E6D482892BCC200C8154B /* HalfASheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 964E6D472892BCC200C8154B /* XCRemoteSwiftPackageReference "HalfASheet" */;
+			productName = HalfASheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9623168628919A8B00C731BA /* Insightment.xcdatamodeld */ = {
