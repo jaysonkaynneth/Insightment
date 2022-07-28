@@ -28,12 +28,12 @@ struct FeedbackView: View {
                 
                 if selectedIndex == "Start" {
                     List{
-                        ForEach(feedbacks) { feedback in
-                            NavigationLink{
+                        ForEach(feedbacks.filter{
+                            $0.location == "Start"
+                        }) { feedback in
+                        
                                 Text(feedback.feedback ?? "no feedback")
-                            } label: {
-                                Text(feedback.feedback ?? "no feedback")
-                                }
+                            
                         }.onDelete(perform: deleteItems)
 
                     }.listStyle(.inset)
@@ -43,7 +43,9 @@ struct FeedbackView: View {
                     
                 } else if selectedIndex == "Stop" {
                     List{
-                        ForEach(feedbacks) { feedback in
+                        ForEach(feedbacks.filter{
+                            $0.location == "Stop"
+                        }) { feedback in
                             NavigationLink{
                                 Text(feedback.feedback ?? "no feedback")
                             } label: {
@@ -56,7 +58,9 @@ struct FeedbackView: View {
                     
                 } else {
                     List{
-                        ForEach(feedbacks) { feedback in
+                        ForEach(feedbacks.filter{
+                            $0.location == "Continue"
+                        }) { feedback in
                             NavigationLink{
                                 Text(feedback.feedback ?? "no feedback")
                             } label: {

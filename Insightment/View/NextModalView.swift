@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct NextModalView: View {
-    var location = ["Start", "Stop", "Continue"]
+    @Environment(\.managedObjectContext) var moc
     
     @Binding var showModal: Bool
-    @State private var nextStep: String = ""
-    @State private var locations = "Start"
+    @State private var nextStepText: String = ""
     
     var body: some View {
         NavigationView {
@@ -20,7 +19,7 @@ struct NextModalView: View {
                     List{
                         HStack {
                         Text("Next Step")
-                            TextField("", text: $nextStep).textFieldStyle(.roundedBorder)
+                            TextField("", text: $nextStepText).textFieldStyle(.roundedBorder)
                         }
                     }.listStyle(.inset)
                     .padding(.top, 44)
@@ -46,7 +45,11 @@ struct NextModalView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             print("Add tapped!")
+                            let nextStep =  NextStep(context: moc)
+                            
+                            nextStep.nextstep = (nextStepText)
                             self.showModal.toggle()
+                            try? moc.save()
                         } label: {
                             Text("Add")
                                 .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))

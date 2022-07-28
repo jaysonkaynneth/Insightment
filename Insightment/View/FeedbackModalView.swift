@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedbackModalView: View {
     @Environment(\.managedObjectContext) var moc
     
-    var location = ["Start", "Stop", "Continue"]
+    var locationName = ["Start", "Stop", "Continue"]
     
     @Binding var showModal: Bool
     @State private var feedbacktext: String = ""
@@ -29,7 +29,7 @@ struct FeedbackModalView: View {
                     HStack{
                     Text("Location")
                     Picker("", selection: $locations) {
-                                    ForEach(location, id: \.self) {
+                                    ForEach(locationName, id: \.self) {
                                         Text($0)
                                     }
                                 }

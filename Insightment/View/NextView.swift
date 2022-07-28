@@ -8,15 +8,42 @@
 import SwiftUI
 
 struct NextView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var nextSteps: FetchedResults<NextStep>
     @State private var showModal = false
+    @State private var tapped = false
     
     var body: some View {
         NavigationView{
             VStack{
-                    List {
-                        Text("Hi")
-                    }.listStyle(.inset)
-                        .padding(.top, 25)
+                List{
+                    ForEach(nextSteps) { nextstep in
+                        HStack{
+                            Text(nextstep.nextstep ?? "no feedback")
+                            Spacer()
+                            Button {
+                                tapped.toggle()
+                            } label: {
+                                Image(systemName: tapped ? "checkmark" : "")
+                                    .foregroundColor(Color(red: 251/255, green: 80/255, blue: 18/255))
+                            }
+
+                        }
+                            .onTapGesture {
+                                print("Tapped cell")
+                                tapped.toggle()
+                    }
+                            
+                            
+                    }.onDelete(perform: deleteItems)
+                     
+
+                    
+                    
+                }.listStyle(.inset)
+                    .padding(.top, 25)
+             
+                   
             }
             .navigationTitle(Text("Next Steps"))
             .toolbar {
@@ -30,6 +57,19 @@ struct NextView: View {
                 .sheet(isPresented: $showModal) {
                     NextModalView(showModal: self.$showModal)
                 }
+            }
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { nextSteps[$0] }.forEach(moc.delete)
+
+            do {
+                try moc.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
